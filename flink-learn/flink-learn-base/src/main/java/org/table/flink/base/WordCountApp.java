@@ -14,8 +14,10 @@ public class WordCountApp {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
+        //Source
         DataStreamSource<String> streamSource = env.socketTextStream("127.0.0.1", 9999);
 
+        //Transformation
         SingleOutputStreamOperator<Tuple2<String, Integer>> streamOperator = streamSource.flatMap(new FlatMapFunction<String, String>() {
             @Override
             public void flatMap(String value, Collector<String> out) throws Exception {
@@ -36,6 +38,7 @@ public class WordCountApp {
             }
         }).sum(1);
 
+        //Sink
         streamOperator.print();
 
         env.execute(WordCountApp.class.getSimpleName());
