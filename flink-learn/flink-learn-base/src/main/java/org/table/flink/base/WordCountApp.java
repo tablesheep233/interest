@@ -1,4 +1,4 @@
-package org.table.base;
+package org.table.flink.base;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.MapFunction;
