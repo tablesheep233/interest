@@ -7,13 +7,11 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-import java.time.Duration;
-
 @Component
 @Aspect
 public class ExecutionSpeedMonitor {
 
-    @Pointcut(value = "execution(* org.table.aop.base.*.*(..))")
+    @Pointcut(value = "execution(* org.table.aop.proxy.base.*.*(..))")
     public void pointCut() {
     }
 
