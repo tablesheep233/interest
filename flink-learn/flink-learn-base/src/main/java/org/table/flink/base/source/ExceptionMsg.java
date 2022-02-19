@@ -1,29 +1,29 @@
 package org.table.flink.base.source;
 
-import org.apache.flink.streaming.api.functions.source.SourceFunction;
+import lombok.Data;
+import org.apache.commons.lang3.RandomStringUtils;
 
+import java.io.Serializable;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ExceptionSource implements SourceFunction<ExceptionMsg> {
+@Data
+public class ExceptionMsg implements Serializable {
+    private static final long serialVersionUID = -6849794470754667710L;
 
-    private volatile AtomicBoolean running;
+    private String type;
 
-    public ExceptionSource() {
-        this.running = new AtomicBoolean(true);
-    }
+    private String msg;
 
-    @Override
-    public void run(SourceContext<ExceptionMsg> ctx) throws Exception {
-        while (running.get()) {
-            ctx.collect(ExceptionMsg.Factory.generate());
-            TimeUnit.MILLISECONDS.sleep(ThreadLocalRandom.current().nextInt(100, 500));
+    public static final class Factory {
+
+        private static final List<String> types = List.of("IllegalArgument", "BadRequest", "DataNotFound");
+
+        public static ExceptionMsg generate() {
+            ExceptionMsg msg = new ExceptionMsg();
+            msg.type = types.get(ThreadLocalRandom.current().nextInt(0, 3));
+            msg.msg = RandomStringUtils.randomAlphabetic(6);
+            return msg;
         }
-    }
-
-    @Override
-    public void cancel() {
-        running.set(false);
     }
 }
