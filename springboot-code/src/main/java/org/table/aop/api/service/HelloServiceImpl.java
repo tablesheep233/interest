@@ -1,5 +1,8 @@
 package org.table.aop.api.service;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class HelloServiceImpl implements HelloService{
 
     public static final String HELLO = "hello";
