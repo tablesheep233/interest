@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class ExecutionSpeedMonitor {
 
+//    @Pointcut(value = "execution(* org.table.aop.proxy.base.InterfaceClass+.*(..))")
     @Pointcut(value = "execution(* org.table.aop.proxy.base.*.*(..))")
     public void pointCut() {
     }
