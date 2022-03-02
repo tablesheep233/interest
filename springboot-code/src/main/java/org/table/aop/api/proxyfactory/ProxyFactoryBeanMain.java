@@ -12,7 +12,6 @@ import org.table.aop.api.service.HelloServiceImpl;
 /**
  * {@link ProxyFactoryBean} demo
  */
-@EnableAspectJAutoProxy
 @Configuration
 public class ProxyFactoryBeanMain {
 

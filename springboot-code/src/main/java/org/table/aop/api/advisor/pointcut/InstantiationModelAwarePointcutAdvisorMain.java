@@ -7,7 +7,7 @@ import org.table.aop.api.service.HelloService;
 
 @EnableAspectJAutoProxy
 @Configuration
-public class PointcutAdvisorMain {
+public class InstantiationModelAwarePointcutAdvisorMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.scan("org.table.aop.api.service",
