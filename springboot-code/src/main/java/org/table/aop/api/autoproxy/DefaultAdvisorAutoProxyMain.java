@@ -30,6 +30,10 @@ public class DefaultAdvisorAutoProxyMain {
 
     @Bean
     public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
-        return new DefaultAdvisorAutoProxyCreator();
+        DefaultAdvisorAutoProxyCreator autoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+        //自定义bean前缀，与BeanNameAutoProxyCreator类似
+//        autoProxyCreator.setUsePrefix(true);
+//        autoProxyCreator.setAdvisorBeanNamePrefix("xxx");
+        return autoProxyCreator;
     }
 }
