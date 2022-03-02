@@ -1,6 +1,5 @@
-package org.table.aop.api.advisor.pointcut;
+package org.table.aop.api.aspect;
 
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -14,7 +13,7 @@ public class HelloAspect {
     public void pointCut() {
     }
 
-    @Before(value = "org.table.aop.api.advisor.pointcut.HelloAspect.pointCut()")
+    @Before(value = "org.table.aop.api.aspect.HelloAspect.pointCut()")
     public void before() {
         System.out.println("HelloAspect#before");
     }

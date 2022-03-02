@@ -11,6 +11,7 @@ public class PointcutAdvisorMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.scan("org.table.aop.api.service",
+                "org.table.aop.api.aspect",
                 "org.table.aop.api.advisor.pointcut");
         applicationContext.refresh();
         HelloService helloService = applicationContext.getBean(HelloService.class);
