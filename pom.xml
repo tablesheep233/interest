@@ -26,6 +26,7 @@
         <lombok.version>1.18.22</lombok.version>
         <jasypt-spring-boot.version>3.0.4</jasypt-spring-boot.version>
         <mysql.version>8.0.25</mysql.version>
+        <guava.version>31.0.1-jre</guava.version>
     </properties>
 
     <repositories>
@@ -90,6 +91,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
