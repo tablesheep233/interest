@@ -19,6 +19,7 @@ public class AutowiredByBeanNameExecutor implements NoUniqueBeanDefinitionExecut
     @Override
     public void pre(AnnotationConfigApplicationContext applicationContext) {
         applicationContext.scan("org.table.ioc.nounique.base");
+        applicationContext.register(AutowiredByBeanNameExecutor.class);
     }
 
     @Override

@@ -21,6 +21,7 @@ public class QualifierExecutor implements NoUniqueBeanDefinitionExecutor {
     @Override
     public void pre(AnnotationConfigApplicationContext applicationContext) {
         applicationContext.scan("org.table.ioc.nounique.base");
+        applicationContext.register(QualifierExecutor.class);
     }
 
     @Override
