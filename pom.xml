@@ -8,7 +8,7 @@
     <artifactId>interest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>springboot-code</module>
+        <module>spring-learn</module>
         <module>flink-learn</module>
         <module>java-base</module>
     </modules>
@@ -21,8 +21,9 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
-        <spring-cloud.version>2021.0.0</spring-cloud.version>
-        <spring-boot.version>2.6.1</spring-boot.version>
+        <spring-cloud.version>2021.0.1</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+        <spring-boot.version>2.6.3</spring-boot.version>
         <lombok.version>1.18.22</lombok.version>
         <jasypt-spring-boot.version>3.0.4</jasypt-spring-boot.version>
         <mysql.version>8.0.25</mysql.version>
@@ -73,14 +74,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba.cloud</groupId>-->
-<!--                <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
-<!--                <version>${spring-cloud-alibaba.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <dependency>
                 <groupId>mysql</groupId>
